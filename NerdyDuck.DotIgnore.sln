@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.1
+MinimumVisualStudioVersion = 15.0.26403.3
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{89F6E25D-F20D-44CC-8266-AD5E8EFE0F7C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A2D3D58D-FDD1-48AD-8B1E-8EF972339AC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{6A5D3841-8F41-4ECD-8558-F2EF205E4751}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FD09EDD6-4E50-49C7-8149-AF6BAD69A801}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{F9159FFE-ECE5-4D59-99FA-9BF1BB839DCB}"
+	ProjectSection(SolutionItems) = preProject
+		media\NerdyDuck.DotIgnore-128x128.png = media\NerdyDuck.DotIgnore-128x128.png
+		media\NerdyDuck.DotIgnore-50x50.png = media\NerdyDuck.DotIgnore-50x50.png
+		media\NerdyDuck.DotIgnore.snk = media\NerdyDuck.DotIgnore.snk
+		media\NerdyDuck.DotIgnore.svg = media\NerdyDuck.DotIgnore.svg
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotIgnore", "src\DotIgnore.csproj", "{9D8E98E6-1556-451F-BAFB-E510C791BD4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotIgnore.Test.net46", "test\DotIgnore.Test.net46\DotIgnore.Test.net46.csproj", "{8E3149D4-4035-4B34-97B8-09E2B6A6F8CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotIgnore.Test.netcore2", "test\DotIgnore.Test.netcore2\DotIgnore.Test.netcore2.csproj", "{79965128-5185-4280-B976-1577D9E7196D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9D8E98E6-1556-451F-BAFB-E510C791BD4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D8E98E6-1556-451F-BAFB-E510C791BD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D8E98E6-1556-451F-BAFB-E510C791BD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D8E98E6-1556-451F-BAFB-E510C791BD4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3149D4-4035-4B34-97B8-09E2B6A6F8CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3149D4-4035-4B34-97B8-09E2B6A6F8CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3149D4-4035-4B34-97B8-09E2B6A6F8CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3149D4-4035-4B34-97B8-09E2B6A6F8CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79965128-5185-4280-B976-1577D9E7196D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79965128-5185-4280-B976-1577D9E7196D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79965128-5185-4280-B976-1577D9E7196D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79965128-5185-4280-B976-1577D9E7196D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D8E98E6-1556-451F-BAFB-E510C791BD4A} = {A2D3D58D-FDD1-48AD-8B1E-8EF972339AC9}
+		{8E3149D4-4035-4B34-97B8-09E2B6A6F8CC} = {FD09EDD6-4E50-49C7-8149-AF6BAD69A801}
+		{79965128-5185-4280-B976-1577D9E7196D} = {FD09EDD6-4E50-49C7-8149-AF6BAD69A801}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C42D7CD-AD57-4C44-83B7-C513F66336D6}
+	EndGlobalSection
+EndGlobal

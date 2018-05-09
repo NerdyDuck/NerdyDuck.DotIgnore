@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup Label="Project settings">
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Platforms>AnyCPU</Platforms>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NerdyDuck.DotIgnore</RootNamespace>
+    <AssemblyName>NerdyDuck.DotIgnore</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)media\NerdyDuck.DotIgnore.snk</AssemblyOriginatorKeyFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Assembly attributes">
+    <AssemblyTitle>NerdyDuck.DotIgnore</AssemblyTitle>
+    <Description>A library that implements a file filter using the patterns of .gitignore.</Description>
+    <Company>NerdyDuck</Company>
+    <Copyright>Copyright © NerdyDuck 2018</Copyright>
+    <Product>NerdyDuck Libraries</Product>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Code analysis">
+    <CodeAnalysisRuleSet>Default.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Label="NuGet">
+    <IsPackable>true</IsPackable>
+    <PackageId>NerdyDuck.DotIgnore</PackageId>
+    <Title>NerdyDuck.DotIgnore</Title>
+    <Authors>NerdyDuck</Authors>
+    <Description>A library that implements a file filter using the patterns of .gitignore (see https://git-scm.com/docs/gitignore). Uses an abstract file system so that document sources other than the local file system can be used.</Description>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/NerdyDuck/NerdyDuck.DotIgnore</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/NerdyDuck/NerdyDuck.DotIgnore/master/media/NerdyDuck.DotIgnore-50x50.png</PackageIconUrl>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+    <PackageTags>git;.gitignore;filter;netstandard2.0</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <RepositoryUrl>https://github.com/NerdyDuck/NerdyDuck.DotIgnore</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <MinClientVersion>4.3.0</MinClientVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Debug config" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Label="Release config" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="TextResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TextResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="TextResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Update="CustomDictionary.xml" />
+  </ItemGroup>
+</Project>

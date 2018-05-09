@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup Label="Project settings">
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Platforms>AnyCPU</Platforms>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NerdyDuck.Tests.DotIgnore</RootNamespace>
+    <AssemblyName>NerdyDuck.Tests.DotIgnore</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(SolutionDir)media\NerdyDuck.DotIgnore.snk</AssemblyOriginatorKeyFile>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <PropertyGroup Label="Assembly attributes">
+    <AssemblyTitle>NerdyDuck.Tests.DotIgnore</AssemblyTitle>
+    <Description>Unit tests for NerdyDuck.DotIgnore library</Description>
+    <Company>NerdyDuck</Company>
+    <Copyright>Copyright © NerdyDuck 2018</Copyright>
+    <Product>NerdyDuck Libraries</Product>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Version>1.0.0</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Debug config" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Label="Release config" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\DotIgnore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\DotIgnore.Test.net46\**\*.cs" Exclude="..\DotIgnore.Test.net46\obj\**\*.cs" />
+  </ItemGroup>
+</Project>
