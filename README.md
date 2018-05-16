@@ -44,4 +44,5 @@ The project is licensed under the [Apache License, Version 2.0](LICENSE).
 
 ### Attributions
 - Initial idea for project based on [MAB.DotIgnore](https://github.com/markashleybell/MAB.DotIgnore) by @markashleybell
+- Abstract file system in parts inspired by the [file system](https://github.com/aspnet/FileSystem) of @aspnet
 - [Project logo](media/NerdyDuck.DotIgnore.svg) based on original [Git logo](https://git-scm.com/downloads/logos) licensed by [Jason Long](https://twitter.com/jasonlong) under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
