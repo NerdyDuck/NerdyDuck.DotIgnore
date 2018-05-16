@@ -13,7 +13,8 @@ The specification for the file format can be found at [https://git-scm.com/docs/
 Tools working with such repositories may want to traverse the files and folders of the repository directory using the same filter as the used source control provider.
 Other projects that create a kind of document management system may want to implement the same filter capabilities as Git.
 This library provides the functionality to integrate this filter mechanic into your own projects.
-It is built on interfaces and abstract classes, so you can implement the filter for other document systems than the local file system, or have the filter definitions stored in a way other than a file.
+It's file access is based on [Microsoft.Extensions.FileSystem](https://github.com/aspnet/FileSystem), that uses interfaces to represents files and folders, so you can implement the filter for other document systems than the local file system.
+The **NerdyDuck.DotIgnore** library also offers abstract definitions of entries in a .gitignore file, so filter definitions can be stored in a way other than a file.
 
 ### Platform
 This library is compiled for .NET Standard 2.0 (`netstandard2.0`), so it is compatible with projects compiled for
@@ -24,6 +25,10 @@ This library is compiled for .NET Standard 2.0 (`netstandard2.0`), so it is comp
 - Xamarin.Mac 3.8 or later
 - Xamarin.Android 8.0 or later
 - Universal Windows Platform 10.0.16299 or later
+
+### Dependencies
+- [Microsoft.Extensions.FileProviders.Abstractions](https://www.nuget.org/packages/Microsoft.Extensions.FileProviders.Abstractions)
+- [Microsoft.Extensions.FileProviders.Physical](https://www.nuget.org/packages/Microsoft.Extensions.FileProviders.Physical)
 
 ### Languages
 The neutral resource language for all texts is English (en-US). Currently, the only localization available is German (de-DE). If you like to add other languages, feel free to send a pull request with the translated resources!
@@ -44,5 +49,4 @@ The project is licensed under the [Apache License, Version 2.0](LICENSE).
 
 ### Attributions
 - Initial idea for project based on [MAB.DotIgnore](https://github.com/markashleybell/MAB.DotIgnore) by @markashleybell
-- Abstract file system in parts inspired by the [file system](https://github.com/aspnet/FileSystem) of @aspnet
 - [Project logo](media/NerdyDuck.DotIgnore.svg) based on original [Git logo](https://git-scm.com/downloads/logos) licensed by [Jason Long](https://twitter.com/jasonlong) under the [Creative Commons Attribution 3.0 Unported License](https://creativecommons.org/licenses/by/3.0/).
