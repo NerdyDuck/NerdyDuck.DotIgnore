@@ -61,74 +61,20 @@ namespace NerdyDuck.DotIgnore {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The directory does not exist..
+        ///   Looks up a localized string similar to File path may not be empty..
         /// </summary>
-        internal static string Global_DirectoryDoesNotExist {
+        internal static string Matcher_Load_PathEmpty {
             get {
-                return ResourceManager.GetString("Global_DirectoryDoesNotExist", resourceCulture);
+                return ResourceManager.GetString("Matcher_Load_PathEmpty", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The file does not exist..
+        ///   Looks up a localized string similar to String may not be empty..
         /// </summary>
-        internal static string Global_FileDoesNotExist {
+        internal static string Matcher_Load_StringEmpty {
             get {
-                return ResourceManager.GetString("Global_FileDoesNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to File system object is not a file..
-        /// </summary>
-        internal static string Global_NotAFile {
-            get {
-                return ResourceManager.GetString("Global_NotAFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length may not be negative..
-        /// </summary>
-        internal static string MemoryFileSystemObject_ctor_LengthNegative {
-            get {
-                return ResourceManager.GetString("MemoryFileSystemObject_ctor_LengthNegative", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Root path length may not be negative..
-        /// </summary>
-        internal static string PhysicalDirectoryContents_ctor_RootLengthNegative {
-            get {
-                return ResourceManager.GetString("PhysicalDirectoryContents_ctor_RootLengthNegative", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Unexpected type of FileSystemInfo..
-        /// </summary>
-        internal static string PhysicalDirectoryContents_EnsureInitialized_InvalidType {
-            get {
-                return ResourceManager.GetString("PhysicalDirectoryContents_EnsureInitialized_InvalidType", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Path must be absolute..
-        /// </summary>
-        internal static string PhysicalFileSystemProvider_ctor_PathNotAbsolute {
-            get {
-                return ResourceManager.GetString("PhysicalFileSystemProvider_ctor_PathNotAbsolute", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Directory &apos;{0}&apos; does not exist..
-        /// </summary>
-        internal static string PhysicalFileSystemProvider_ctor_PathNotFound {
-            get {
-                return ResourceManager.GetString("PhysicalFileSystemProvider_ctor_PathNotFound", resourceCulture);
+                return ResourceManager.GetString("Matcher_Load_StringEmpty", resourceCulture);
             }
         }
     }

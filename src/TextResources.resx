@@ -117,28 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Global_DirectoryDoesNotExist" xml:space="preserve">
-    <value>The directory does not exist.</value>
+  <data name="Matcher_Load_PathEmpty" xml:space="preserve">
+    <value>File path may not be empty.</value>
   </data>
-  <data name="Global_FileDoesNotExist" xml:space="preserve">
-    <value>The file does not exist.</value>
-  </data>
-  <data name="Global_NotAFile" xml:space="preserve">
-    <value>File system object is not a file.</value>
-  </data>
-  <data name="MemoryFileSystemObject_ctor_LengthNegative" xml:space="preserve">
-    <value>Length may not be negative.</value>
-  </data>
-  <data name="PhysicalDirectoryContents_ctor_RootLengthNegative" xml:space="preserve">
-    <value>Root path length may not be negative.</value>
-  </data>
-  <data name="PhysicalDirectoryContents_EnsureInitialized_InvalidType" xml:space="preserve">
-    <value>Unexpected type of FileSystemInfo.</value>
-  </data>
-  <data name="PhysicalFileSystemProvider_ctor_PathNotAbsolute" xml:space="preserve">
-    <value>Path must be absolute.</value>
-  </data>
-  <data name="PhysicalFileSystemProvider_ctor_PathNotFound" xml:space="preserve">
-    <value>Directory '{0}' does not exist.</value>
+  <data name="Matcher_Load_StringEmpty" xml:space="preserve">
+    <value>String may not be empty.</value>
   </data>
 </root>
