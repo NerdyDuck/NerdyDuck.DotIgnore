@@ -123,4 +123,7 @@
   <data name="Matcher_Load_StringEmpty" xml:space="preserve">
     <value>String may not be empty.</value>
   </data>
+  <data name="Matcher_Merge_InvalidComparison" xml:space="preserve">
+    <value>Cannot merge Matchers with different string comparison types.</value>
+  </data>
 </root>

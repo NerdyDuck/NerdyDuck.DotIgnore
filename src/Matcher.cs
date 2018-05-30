@@ -23,8 +23,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Microsoft.Extensions.FileSystemGlobbing.Abstractions;
 
 namespace NerdyDuck.DotIgnore
@@ -80,26 +78,6 @@ namespace NerdyDuck.DotIgnore
 		/// <returns>Always returns an instance of <see cref="Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult"/>, even if no files were found that were not ignored.</returns>
 		[CLSCompliant(false)]
 		public Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult Execute(DirectoryInfoBase directoryInfo)
-		{
-			if (directoryInfo == null)
-			{
-				throw new ArgumentNullException(nameof(directoryInfo));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-		#endregion
-
-		#region ExecuteAsync
-		/// <summary>
-		/// Asynchronously searches the directory specified for all files not matching the ignore patterns added to this instance of <see cref="Matcher"/>.
-		/// </summary>
-		/// <param name="directoryInfo">The root directory for the search.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains an instance of <see cref="Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult"/>, even if no files were found that were not ignored.</returns>
-		[CLSCompliant(false)]
-		public async Task<Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult> ExecuteAsync(DirectoryInfoBase directoryInfo, CancellationToken cancellationToken)
 		{
 			if (directoryInfo == null)
 			{
@@ -191,90 +169,6 @@ namespace NerdyDuck.DotIgnore
 		}
 		#endregion
 
-		#region LoadAsync
-		/// <summary>
-		/// Asynchronously loads a list of ignore patterns from the specified file.
-		/// </summary>
-		/// <param name="path">A relative or absolute path for the file to read.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains the current <see cref="Matcher"/> instance.</returns>
-		/// <remarks>The file must have the syntax of a .gitignore file. See https://git-scm.com/docs/gitignore for more information.</remarks>
-		public async Task<Matcher> LoadAsync(string path, CancellationToken cancellationToken)
-		{
-			if (path == null)
-			{
-				throw new ArgumentNullException(nameof(path));
-			}
-			if (path.Length == 0)
-			{
-				throw new ArgumentException(TextResources.Matcher_Load_PathEmpty, nameof(path));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-
-		/// <summary>
-		/// Asynchronously loads a list of ignore patterns from the specified <see cref="TextReader"/>.
-		/// </summary>
-		/// <param name="reader">The <see cref="TextReader"/> containing the ignore patterns to read.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains the current <see cref="Matcher"/> instance.</returns>
-		/// <remarks>The data provided by the <see cref="TextReader"/> must have the syntax of a .gitignore file. See https://git-scm.com/docs/gitignore for more information.</remarks>
-		public async Task<Matcher> LoadAsync(TextReader reader, CancellationToken cancellationToken)
-		{
-			if (reader == null)
-			{
-				throw new ArgumentNullException(nameof(reader));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-
-		/// <summary>
-		/// Asynchronously loads a list of ignore patterns from the specified stream.
-		/// </summary>
-		/// <param name="stream">The stream containing the ignore patterns to read.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains the current <see cref="Matcher"/> instance.</returns>
-		/// <remarks>The data provided by the stream must have the syntax of a .gitignore file. See https://git-scm.com/docs/gitignore for more information.
-		/// <see cref="UTF8Encoding"/> is used to read the stream.</remarks>
-		public async Task<Matcher> LoadAsync(Stream stream, CancellationToken cancellationToken)
-		{
-			if (stream == null)
-			{
-				throw new ArgumentNullException(nameof(stream));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-
-		/// <summary>
-		/// Asynchronously loads a list of ignore patterns from the specified stream, with the specified character encoding.
-		/// </summary>
-		/// <param name="stream">The stream containing the ignore patterns to read.</param>
-		/// <param name="encoding">The character encoding to use.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains the current <see cref="Matcher"/> instance.</returns>
-		/// <remarks>The data provided by the stream must have the syntax of a .gitignore file. See https://git-scm.com/docs/gitignore for more information.</remarks>
-		public async Task<Matcher> LoadAsync(Stream stream, Encoding encoding, CancellationToken cancellationToken)
-		{
-			if (stream == null)
-			{
-				throw new ArgumentNullException(nameof(stream));
-			}
-			if (encoding == null)
-			{
-				throw new ArgumentNullException(nameof(encoding));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-		#endregion
-
 		#region LoadString
 		/// <summary>
 		/// Loads a list of ignore patterns from the specified string.
@@ -298,23 +192,27 @@ namespace NerdyDuck.DotIgnore
 		}
 		#endregion
 
-		#region LoadStringAsync
+		#region Merge
 		/// <summary>
-		/// Asynchronously loads a list of ignore patterns from the specified string.
+		/// Merges the ignore patterns of two <see cref="Matcher"/> instances into a new instance.
 		/// </summary>
-		/// <param name="patterns">The string containing the ignore patterns to read.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains the current <see cref="Matcher"/> instance.</returns>
-		/// <remarks>The text contained in the string must have the syntax of a .gitignore file. See https://git-scm.com/docs/gitignore for more information.</remarks>
-		public async Task<Matcher> LoadStringAsync(string patterns, CancellationToken cancellationToken)
+		/// <param name="matcher1">A <see cref="Matcher"/>.</param>
+		/// <param name="matcher2">A <see cref="Matcher"/>.</param>
+		/// <returns>A new instance of <see cref="Matcher"/> containing the ignore patterns of the provides <see cref="Matcher"/>s.</returns>
+		public static Matcher Merge(Matcher matcher1, Matcher matcher2)
 		{
-			if (patterns == null)
+			if (matcher1 == null)
 			{
-				throw new ArgumentNullException(nameof(patterns));
+				throw new ArgumentNullException(nameof(matcher1));
 			}
-			if (patterns.Length == 0)
+			if (matcher2 == null)
 			{
-				throw new ArgumentException(TextResources.Matcher_Load_StringEmpty, nameof(patterns));
+				throw new ArgumentNullException(nameof(matcher2));
+			}
+
+			if (matcher1._comparisonType != matcher2._comparisonType)
+			{
+				throw new ArgumentException(TextResources.Matcher_Merge_InvalidComparison);
 			}
 
 			// TODO

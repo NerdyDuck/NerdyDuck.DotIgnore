@@ -77,5 +77,14 @@ namespace NerdyDuck.DotIgnore {
                 return ResourceManager.GetString("Matcher_Load_StringEmpty", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot merge Matchers with different string comparison types..
+        /// </summary>
+        internal static string Matcher_Merge_InvalidComparison {
+            get {
+                return ResourceManager.GetString("Matcher_Merge_InvalidComparison", resourceCulture);
+            }
+        }
     }
 }

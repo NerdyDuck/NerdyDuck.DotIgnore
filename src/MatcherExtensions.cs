@@ -21,9 +21,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace NerdyDuck.DotIgnore
 {
@@ -51,27 +48,6 @@ namespace NerdyDuck.DotIgnore
 		}
 		#endregion
 
-		#region AddIgnorePatternsAsync
-		/// <summary>
-		/// Asynchronously adds multiple ignore patterns to the <see cref="Matcher"/>.
-		/// </summary>
-		/// <param name="matcher">The matcher to which the ignore patterns are added.</param>
-		/// <param name="ignorePatternsGroups">A list of ignore patterns.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains the current <see cref="Matcher"/> instance.</returns>
-		/// <returns>The current <see cref="Matcher"/> instance.</returns>
-		public static async Task<Matcher> AddIgnorePatternsAsync(this Matcher matcher, CancellationToken cancellationToken, params IEnumerable<string>[] ignorePatternsGroups)
-		{
-			if (matcher == null)
-			{
-				throw new ArgumentNullException(nameof(matcher));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-		#endregion
-
 		#region GetResultsInFullPath
 		/// <summary>
 		/// Searches the specified directory for all files not ignored by the patterns added to this instance of <see cref="Matcher"/>.
@@ -80,26 +56,6 @@ namespace NerdyDuck.DotIgnore
 		/// <param name="directoryPath">The root directory for the search.</param>
 		/// <returns>A list of the absolute paths of all files that were not ignored; an empty enumerable if not files were found.</returns>
 		public static IEnumerable<string> GetResultsInFullPath(this Matcher matcher, string directoryPath)
-		{
-			if (matcher == null)
-			{
-				throw new ArgumentNullException(nameof(matcher));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-		#endregion
-
-		#region GetResultsInFullPathAsync
-		/// <summary>
-		/// Searches the specified directory asynchronously for all files not ignored by the patterns added to this instance of <see cref="Matcher"/>.
-		/// </summary>
-		/// <param name="matcher">The matcher to use for filtering.</param>
-		/// <param name="directoryPath">The root directory for the search.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains a list of the absolute paths of all files that were not ignored, or an empty enumerable if not files were found.</returns>
-		public static async Task<IEnumerable<string>> GetResultsInFullPathAsync(this Matcher matcher, string directoryPath, CancellationToken cancellationToken)
 		{
 			if (matcher == null)
 			{
@@ -183,82 +139,6 @@ namespace NerdyDuck.DotIgnore
 		}
 		#endregion
 
-		#region MatchAsync
-		/// <summary>
-		/// Matches the specified files asynchronously with the ignore patterns in the matcher without going to disk.
-		/// </summary>
-		/// <param name="matcher">The matcher that holds the ignore patterns and a pattern matching type.</param>
-		/// <param name="files">The files to run the matcher against.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains an instance of <see cref="Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult"/>, even if no files were found that were not ignored.</returns>
-		public static async Task<Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult> MatchAsync(this Matcher matcher, IEnumerable<string> files, CancellationToken cancellationToken)
-		{
-			if (matcher == null)
-			{
-				throw new ArgumentNullException(nameof(matcher));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-
-		/// <summary>
-		/// Matches the specified file asynchronously with the ignore patterns in the matcher without going to disk.
-		/// </summary>
-		/// <param name="matcher">The matcher that holds the ignore patterns and a pattern matching type.</param>
-		/// <param name="file">The file to run the matcher against.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains an instance of <see cref="Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult"/>, even if no files were found that were not ignored.</returns>
-		public static async Task<Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult> MatchAsync(this Matcher matcher, string file, CancellationToken cancellationToken)
-		{
-			if (matcher == null)
-			{
-				throw new ArgumentNullException(nameof(matcher));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-
-		/// <summary>
-		/// Matches the specified files asynchronously with the ignore patterns in the matcher without going to disk.
-		/// </summary>
-		/// <param name="matcher">The matcher that holds the ignore patterns and a pattern matching type.</param>
-		/// <param name="rootDir">The root directory for the matcher to match the files from.</param>
-		/// <param name="files">The files to run the matcher against.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains an instance of <see cref="Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult"/>, even if no files were found that were not ignored.</returns>
-		public static async Task<Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult> MatchAsync(this Matcher matcher, string rootDir, IEnumerable<string> files, CancellationToken cancellationToken)
-		{
-			if (matcher == null)
-			{
-				throw new ArgumentNullException(nameof(matcher));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-
-		/// <summary>
-		/// Matches the specified file asynchronously with the ignore patterns in the matcher without going to disk.
-		/// </summary>
-		/// <param name="matcher">The matcher that holds the ignore patterns and a pattern matching type.</param>
-		/// <param name="rootDir">The root directory for the matcher to match the file from.</param>
-		/// <param name="file">The file to run the matcher against.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter contains an instance of <see cref="Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult"/>, even if no files were found that were not ignored.</returns>
-		public static async Task<Microsoft.Extensions.FileSystemGlobbing.PatternMatchingResult> MatchAsync(this Matcher matcher, string rootDir, string file, CancellationToken cancellationToken)
-		{
-			if (matcher == null)
-			{
-				throw new ArgumentNullException(nameof(matcher));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-		#endregion
-
 		#region IsMatch(DotIgnore.Matcher)
 		/// <summary>
 		/// Checks if the specified file does not match any of the ignore patterns in the current matcher.
@@ -285,45 +165,6 @@ namespace NerdyDuck.DotIgnore
 		/// <param name="file">The file to run the matcher against.</param>
 		/// <returns><see langword="true"/>, if the file does not match any of the ignore patterns; otherwise, <see langword="false"/>.</returns>
 		public static bool IsMatch(this Matcher matcher, string rootDir, string file)
-		{
-			if (matcher == null)
-			{
-				throw new ArgumentNullException(nameof(matcher));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-		#endregion
-
-		#region IsMatchAsync
-		/// <summary>
-		/// Asynchronously checks if the specified file does not match any of the ignore patterns in the current matcher.
-		/// </summary>
-		/// <param name="matcher">The matcher that holds the ignore patterns and a pattern matching type.</param>
-		/// <param name="file">The file to run the matcher against.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter is <see langword="true"/>, if the file does not match any of the ignore patterns; otherwise, <see langword="false"/>.</returns>
-		public static async Task<bool> IsMatchAsync(this Matcher matcher, string file, CancellationToken cancellationToken)
-		{
-			if (matcher == null)
-			{
-				throw new ArgumentNullException(nameof(matcher));
-			}
-
-			// TODO
-			throw new NotImplementedException();
-		}
-
-		/// <summary>
-		/// Asynchronously checks if the specified file does not match any of the ignore patterns in the current matcher.
-		/// </summary>
-		/// <param name="matcher">The matcher that holds the ignore patterns and a pattern matching type.</param>
-		/// <param name="file">The file to run the matcher against.</param>
-		/// <param name="rootDir">The root directory for the matcher to match the file from.</param>
-		/// <param name="cancellationToken">The token to monitor for cancellation requests. The default value is <see cref="CancellationToken.None"/>.</param>
-		/// <returns>A task that represents the asynchronous operation. The value of the <see cref="Task{TResult}.Result"/> parameter is <see langword="true"/>, if the file does not match any of the ignore patterns; otherwise, <see langword="false"/>.</returns>
-		public static async Task<bool> IsMatchAsync(this Matcher matcher, string rootDir, string file, CancellationToken cancellationToken)
 		{
 			if (matcher == null)
 			{
