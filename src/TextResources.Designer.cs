@@ -61,6 +61,24 @@ namespace NerdyDuck.DotIgnore {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pattern may not be null, empty or white-space-only..
+        /// </summary>
+        internal static string ExcludePattern_ctor_PatternEmpty {
+            get {
+                return ResourceManager.GetString("ExcludePattern_ctor_PatternEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pattern is a comment, starting with &apos;#&apos;..
+        /// </summary>
+        internal static string ExcludePattern_ExaminePattern_Comment {
+            get {
+                return ResourceManager.GetString("ExcludePattern_ExaminePattern_Comment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File path may not be empty..
         /// </summary>
         internal static string Matcher_Load_PathEmpty {

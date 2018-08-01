@@ -1,0 +1,22 @@
+root = true
+
+# Default settings: 4 spaces indentation, new line at end of file
+[*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+end_of_line = crlf
+
+# C# files
+[*.cs]
+# Indentation preferences
+indent_style = tab
+
+dotnet_naming_symbols.any_type.applicable_kinds = *
+dotnet_naming_symbols.any_type.applicable_accessibilities = *
+
+dotnet_naming_style.pascal_style.capitalization = pascal_case
+
+dotnet_naming_rule.no_conv.symbols = any_type
+dotnet_naming_rule.no_conv.style = pascal_style
+dotnet_naming_rule.no_conv.severity = none
