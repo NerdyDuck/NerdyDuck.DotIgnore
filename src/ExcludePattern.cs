@@ -64,23 +64,23 @@ namespace NerdyDuck.DotIgnore
 		public bool ContainsWildcards => NoWildcardLength < Pattern.Length;
 
 		/// <summary>
-		/// Gets a rank used to compute the order of the pattern in a group of patterns.
+		/// Gets or sets a rank used to compute the order of the pattern in a group of patterns.
 		/// </summary>
 		/// <value>An integer value. The smaller the value, the higher the rank.</value>
 		/// <remarks>This is usually the line number of the pattern in the <c>.gitignore</c> file.</remarks>
 		public int Rank
 		{
-			get; private set;
+			get; set;
 		}
 
 		/// <summary>
-		/// Gets a value defining a group of rankings (in conjunction with <see cref="Rank"/> that the <see cref="ExcludePattern"/> is a part of.
+		/// Gets or sets a value defining a group of rankings (in conjunction with <see cref="Rank"/> that the <see cref="ExcludePattern"/> is a part of.
 		/// </summary>
 		/// <value>An integer value. The smaller the value, the higher the rank group.</value>
 		/// <remarks>For git, this defines the origin of the <see cref="ExcludePattern"/>, e.g. from a <c>.gitginore</c> file, a fallback like <c>.git/info/exclude</c> or <c>core.excludesfile</c>, or command line parameters.</remarks>
 		public int RankGroup
 		{
-			get; private set;
+			get; set;
 		}
 		#endregion
 

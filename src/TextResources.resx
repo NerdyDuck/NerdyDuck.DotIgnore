@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ExcludeList_FromFile_FileNotFound" xml:space="preserve">
+    <value>Ignore file not found.</value>
+  </data>
+  <data name="ExcludeList_FromFile_PathEmpty" xml:space="preserve">
+    <value>Path may not be null, empty or white-space-only.</value>
+  </data>
+  <data name="ExcludeList_FromStream_NotReadable" xml:space="preserve">
+    <value>Cannot read from stream.</value>
+  </data>
   <data name="ExcludePattern_ctor_PatternEmpty" xml:space="preserve">
     <value>Pattern may not be null, empty or white-space-only.</value>
   </data>
@@ -131,5 +140,11 @@
   </data>
   <data name="Matcher_Merge_InvalidComparison" xml:space="preserve">
     <value>Cannot merge Matchers with different string comparison types.</value>
+  </data>
+  <data name="GitRepository_ctor_PathEmpty" xml:space="preserve">
+    <value>Repository path may not be null, empty or white-space-only.</value>
+  </data>
+  <data name="GitEnvironment_GetEnvironmentVariables_NameEmpty" xml:space="preserve">
+    <value>Name may not be null, empty or white-space-only.</value>
   </data>
 </root>

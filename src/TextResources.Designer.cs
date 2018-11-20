@@ -61,6 +61,33 @@ namespace NerdyDuck.DotIgnore {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ignore file not found..
+        /// </summary>
+        internal static string ExcludeList_FromFile_FileNotFound {
+            get {
+                return ResourceManager.GetString("ExcludeList_FromFile_FileNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Path may not be null, empty or white-space-only..
+        /// </summary>
+        internal static string ExcludeList_FromFile_PathEmpty {
+            get {
+                return ResourceManager.GetString("ExcludeList_FromFile_PathEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cannot read from stream..
+        /// </summary>
+        internal static string ExcludeList_FromStream_NotReadable {
+            get {
+                return ResourceManager.GetString("ExcludeList_FromStream_NotReadable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pattern may not be null, empty or white-space-only..
         /// </summary>
         internal static string ExcludePattern_ctor_PatternEmpty {
@@ -75,6 +102,24 @@ namespace NerdyDuck.DotIgnore {
         internal static string ExcludePattern_ExaminePattern_Comment {
             get {
                 return ResourceManager.GetString("ExcludePattern_ExaminePattern_Comment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name may not be null, empty or white-space-only..
+        /// </summary>
+        internal static string GitEnvironment_GetEnvironmentVariables_NameEmpty {
+            get {
+                return ResourceManager.GetString("GitEnvironment_GetEnvironmentVariables_NameEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Repository path may not be null, empty or white-space-only..
+        /// </summary>
+        internal static string GitRepository_ctor_PathEmpty {
+            get {
+                return ResourceManager.GetString("GitRepository_ctor_PathEmpty", resourceCulture);
             }
         }
         

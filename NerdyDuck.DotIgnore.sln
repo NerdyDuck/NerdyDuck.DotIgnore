@@ -8,6 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
 		LICENSE = LICENSE
+		Notes.md = Notes.md
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -29,7 +30,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotIgnore", "src\DotIgnore.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotIgnore.Test.net46", "test\DotIgnore.Test.net46\DotIgnore.Test.net46.csproj", "{8E3149D4-4035-4B34-97B8-09E2B6A6F8CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotIgnore.Test.netcore2", "test\DotIgnore.Test.netcore2\DotIgnore.Test.netcore2.csproj", "{79965128-5185-4280-B976-1577D9E7196D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotIgnore.Test.netcore2", "test\DotIgnore.Test.netcore2\DotIgnore.Test.netcore2.csproj", "{79965128-5185-4280-B976-1577D9E7196D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
