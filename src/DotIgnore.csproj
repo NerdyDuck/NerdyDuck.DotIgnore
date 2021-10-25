@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="17.0">
+  <PropertyGroup Label="Compilation">
+    <TargetFrameworks>netstandard2.0;net5.0;net6.0</TargetFrameworks>
+    <RootNamespace>NerdyDuck.DotIgnore</RootNamespace>
+    <AssemblyName>$(RootNamespace)</AssemblyName>
+    <IsTestProject>false</IsTestProject>
+    <OutputType>Library</OutputType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DefineTrace>true</DefineTrace>
+    <DeployPath>$(MSBuildThisFileDirectory)../deploy/$(Configuration)/</DeployPath>
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+  </PropertyGroup>
+  <PropertyGroup Label="Assembly Signing">
+    <SignAssembliesAndPackage>false</SignAssembliesAndPackage>
+  </PropertyGroup>
+	<Import Project="$([MSBuild]::GetPathOfFileAbove('signing.props', '$(MSBuildThisFileDirectory)../'))" Condition="$([MSBuild]::GetPathOfFileAbove('signing.props', '$(MSBuildThisFileDirectory)../')) != ''" />
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <SignAssembliesAndPackage>false</SignAssembliesAndPackage>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <CreateGitHubZip>true</CreateGitHubZip>
+    <DefineDebug>true</DefineDebug>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <CreateGitHubZip>true</CreateGitHubZip>
+    <DefineDebug>false</DefineDebug>
+    <DebugType>Portable</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Label="Assembly info">
+    <AssemblyTitle>NerdyDuck DotIgnore</AssemblyTitle>
+    <Description>A library that implements a file filter using the patterns of .gitignore.</Description>
+  </PropertyGroup>
+  <PropertyGroup Label="Code analysis">
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>$(DefineConstants);NETSTD20</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <DefineConstants>$(DefineConstants);NET50</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <DefineConstants>$(DefineConstants);NET50;NET60</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Label="NuGet package settings">
+    <IsPackable>true</IsPackable>
+    <PackageOutputPath>$(DeployPath)NuGet/</PackageOutputPath>
+    <MinClientVersion>4.6</MinClientVersion>
+    <Authors>Daniel Kopp</Authors>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>NerdyDuck.DotIgnore-64x64.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/NerdyDuck/NerdyDuck.DotIgnore</PackageProjectUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>
+      - Initial release
+    </PackageReleaseNotes>
+    <PackageTags>git .gitignore filter</PackageTags>
+    <NoWarn>NU5118</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Label="Github Release Zips">
+    <ZipOutputPath>$(DeployPath)Zip/</ZipOutputPath>
+  </PropertyGroup>
+  <ItemGroup Label="NuGet package icon">
+    <None Include="$(MSBuildThisFileDirectory)../media/NerdyDuck.DotIgnore-64x64.png" Pack="true" PackagePath="\">
+      <Link>NerdyDuck.DotIgnore-64x64.png</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.0.0-4.final">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.0-4.final">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.0.0-preview.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+     <PackageReference Include="NerdyDuck.CodedExceptions" Version="2.0.0-rc.1" />
+ </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="3.1.20" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions" Version="6.0.0-rc.2.21480.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="TextResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TextResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="TextResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TextResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

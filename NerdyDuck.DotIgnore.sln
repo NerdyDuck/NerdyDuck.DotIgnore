@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 17.0.31612.314
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED059200-0CF4-467D-8357-BD69F54C119D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		LICENSE = LICENSE
+		nuget.config = nuget.config
+		README.md = README.md
+		THIRD-PARTY-NOTICES.TXT = THIRD-PARTY-NOTICES.TXT
+		Versions.props = Versions.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{E0C7EDFD-80CC-4027-8DA3-161C72A7679E}"
+	ProjectSection(SolutionItems) = preProject
+		media\NerdyDuck.DotIgnore-64x64.png = media\NerdyDuck.DotIgnore-64x64.png
+		media\NerdyDuck.DotIgnore.svg = media\NerdyDuck.DotIgnore.svg
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{B7573557-159A-427B-94E6-F4D0BD520650}"
+	ProjectSection(SolutionItems) = preProject
+		shared\NerdyDuck.DotIgnore.snk = shared\NerdyDuck.DotIgnore.snk
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0FB8C117-C2AC-446C-9145-9C373E3212B7}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.targets = src\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{36216FC4-2FE1-471F-95F0-CA3AD54F17FE}"
+	ProjectSection(SolutionItems) = preProject
+		test\.editorconfig = test\.editorconfig
+		test\Directory.Build.props = test\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotIgnore", "src\DotIgnore.csproj", "{3486C832-47DB-4B78-B176-00581E1A5CE8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.DotIgnore.Net48", "test\Tests.Net48\Tests.DotIgnore.Net48.csproj", "{A71F589C-1232-4780-891D-6C380ECC4893}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.DotIgnore.Net50", "test\Tests.Net50\Tests.DotIgnore.Net50.csproj", "{F03FD2E6-6F8C-43C3-87D6-CB66A75F81FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.DotIgnore.Net60", "test\Tests.Net60\Tests.DotIgnore.Net60.csproj", "{E6034F70-DAEA-4B1E-BD60-D4276BA7F380}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.DotIgnore.NetCore31", "test\Tests.NetCore31\Tests.DotIgnore.NetCore31.csproj", "{81EF77F9-4114-4498-AC20-7F35A14A6EE4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Tests.DotIgnore", "test\Tests.Shared\Tests.DotIgnore.shproj", "{660096F7-50DC-4C60-9CF7-B065CF272517}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		test\Tests.Shared\Tests.DotIgnore.projitems*{660096f7-50dc-4c60-9cf7-b065cf272517}*SharedItemsImports = 13
+		test\Tests.Shared\Tests.DotIgnore.projitems*{81ef77f9-4114-4498-ac20-7f35a14a6ee4}*SharedItemsImports = 5
+		test\Tests.Shared\Tests.DotIgnore.projitems*{a71f589c-1232-4780-891d-6c380ecc4893}*SharedItemsImports = 5
+		test\Tests.Shared\Tests.DotIgnore.projitems*{e6034f70-daea-4b1e-bd60-d4276ba7f380}*SharedItemsImports = 5
+		test\Tests.Shared\Tests.DotIgnore.projitems*{f03fd2e6-6f8c-43c3-87d6-cb66a75f81fa}*SharedItemsImports = 5
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3486C832-47DB-4B78-B176-00581E1A5CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3486C832-47DB-4B78-B176-00581E1A5CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3486C832-47DB-4B78-B176-00581E1A5CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3486C832-47DB-4B78-B176-00581E1A5CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A71F589C-1232-4780-891D-6C380ECC4893}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A71F589C-1232-4780-891D-6C380ECC4893}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A71F589C-1232-4780-891D-6C380ECC4893}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A71F589C-1232-4780-891D-6C380ECC4893}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03FD2E6-6F8C-43C3-87D6-CB66A75F81FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03FD2E6-6F8C-43C3-87D6-CB66A75F81FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03FD2E6-6F8C-43C3-87D6-CB66A75F81FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03FD2E6-6F8C-43C3-87D6-CB66A75F81FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6034F70-DAEA-4B1E-BD60-D4276BA7F380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6034F70-DAEA-4B1E-BD60-D4276BA7F380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6034F70-DAEA-4B1E-BD60-D4276BA7F380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6034F70-DAEA-4B1E-BD60-D4276BA7F380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81EF77F9-4114-4498-AC20-7F35A14A6EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81EF77F9-4114-4498-AC20-7F35A14A6EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81EF77F9-4114-4498-AC20-7F35A14A6EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81EF77F9-4114-4498-AC20-7F35A14A6EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3486C832-47DB-4B78-B176-00581E1A5CE8} = {0FB8C117-C2AC-446C-9145-9C373E3212B7}
+		{A71F589C-1232-4780-891D-6C380ECC4893} = {36216FC4-2FE1-471F-95F0-CA3AD54F17FE}
+		{F03FD2E6-6F8C-43C3-87D6-CB66A75F81FA} = {36216FC4-2FE1-471F-95F0-CA3AD54F17FE}
+		{E6034F70-DAEA-4B1E-BD60-D4276BA7F380} = {36216FC4-2FE1-471F-95F0-CA3AD54F17FE}
+		{81EF77F9-4114-4498-AC20-7F35A14A6EE4} = {36216FC4-2FE1-471F-95F0-CA3AD54F17FE}
+		{660096F7-50DC-4C60-9CF7-B065CF272517} = {36216FC4-2FE1-471F-95F0-CA3AD54F17FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D155BBF4-BC95-4D08-BF67-0CF027D967F4}
+	EndGlobalSection
+EndGlobal
