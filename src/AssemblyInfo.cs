@@ -29,11 +29,15 @@
  ******************************************************************************/
 #endregion
 
+global using System;
+
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using NerdyDuck.CodedExceptions;
 
 [assembly: CLSCompliant(true)]
 [assembly: ComVisible(true)]
 [assembly: AssemblyTrademark("Covered by MIT License")]
 [assembly: InternalsVisibleTo("NerdyDuck.Tests.DotIgnore, PublicKey=002400000480000094000000060200000024000052534131000400000100010035252405da7955f1cff8323570a3e7781010dc08e7a0e897e3b6bf863db49d5baa86132a1afe91c4489b0e659e91aca90deb628b8052a2a1568d0df415fe9832f012a30114ad8450d9a729a23e7b5d58d7f1f55a99935ca098d230dd93bdd2c8a8322e4a3d82f2885245ad3948254197dc44fa99646ebbc6bfb15014a92d33b2")]
+[assembly: AssemblyFacilityIdentifier(0x0005)]

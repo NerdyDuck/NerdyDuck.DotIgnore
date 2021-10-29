@@ -1,9 +1,39 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿#region Copyright
+/*******************************************************************************
+ * NerdyDuck.Tests.DotIgnore - Unit tests for the
+ * NerdyDuck.DotIgnore assembly
+ * 
+ * The MIT License (MIT)
+ *
+ * Copyright (c) Daniel Kopp, dak@nerdyduck.de
+ *
+ * All rights reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ ******************************************************************************/
+#endregion
+
 using NerdyDuck.DotIgnore.Native;
 
 namespace NerdyDuck.Tests.DotIgnore
 {
+	[ExcludeFromCodeCoverage]
 	[TestClass]
 	public class WildMatchTest
 	{
@@ -1165,7 +1195,7 @@ namespace NerdyDuck.Tests.DotIgnore
 		}
 		#endregion
 
-		private string TestMatchVariants(string text, string pattern)
+		private static string TestMatchVariants(string text, string pattern)
 		{
 			string result = string.Empty;
 			result += TestMatchVariant(pattern, text, WildMatch.WM_PATHNAME);
@@ -1178,20 +1208,14 @@ namespace NerdyDuck.Tests.DotIgnore
 			return result;
 		}
 
-		private string TestMatchVariant(string pattern, string text, int flags)
+		private static string TestMatchVariant(string pattern, string text, int flags)
 		{
-			switch (WildMatch.wildmatch(pattern, text, flags))
+			return WildMatch.wildmatch(pattern, text, flags) switch
 			{
-				case WildMatch.WM_MATCH:
-					return "1";
-				case WildMatch.WM_NOMATCH:
-				case WildMatch.WM_ABORT_ALL:
-				case WildMatch.WM_ABORT_TO_STARSTAR:
-				case WildMatch.WM_ABORT_MALFORMED:
-					return "0";
-				default:
-					return "E";
-			}
+				WildMatch.WM_MATCH => "1",
+				WildMatch.WM_NOMATCH or WildMatch.WM_ABORT_ALL or WildMatch.WM_ABORT_TO_STARSTAR or WildMatch.WM_ABORT_MALFORMED => "0",
+				_ => "E",
+			};
 		}
 	}
 }

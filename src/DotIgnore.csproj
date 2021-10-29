@@ -11,6 +11,7 @@
     <DefineTrace>true</DefineTrace>
     <DeployPath>$(MSBuildThisFileDirectory)../deploy/$(Configuration)/</DeployPath>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Label="Assembly Signing">
     <SignAssembliesAndPackage>false</SignAssembliesAndPackage>

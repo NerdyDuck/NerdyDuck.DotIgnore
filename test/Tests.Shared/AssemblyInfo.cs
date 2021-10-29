@@ -29,7 +29,12 @@
  ******************************************************************************/
 #endregion
 
-using System;
+global using System;
+global using System.Diagnostics.CodeAnalysis;
+global using System.Globalization;
+global using Microsoft.VisualStudio.TestTools.UnitTesting;
+global using NerdyDuck.CodedExceptions;
+
 using System.Reflection;
 using System.Runtime.InteropServices;
 
